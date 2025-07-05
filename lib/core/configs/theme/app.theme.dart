@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/configs/theme/app.colors.dart';
+import 'package:spotify_clone/core/configs/theme/app.colors.dart';
 
 class AppTheme {
   static final lightTheme = ThemeData(
@@ -7,6 +7,11 @@ class AppTheme {
     scaffoldBackgroundColor: AppColors.lightbackground,
     brightness: Brightness.light,
     fontFamily: 'Satoshi',
+    textTheme: const TextTheme(
+      bodyLarge: TextStyle(color: Colors.black), // warna text utama
+      bodyMedium: TextStyle(color: Colors.black87),
+      titleLarge: TextStyle(color: Colors.black),
+    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primary,
@@ -21,6 +26,11 @@ class AppTheme {
     scaffoldBackgroundColor: AppColors.background,
     fontFamily: 'Satoshi',
     brightness: Brightness.dark,
+    textTheme: const TextTheme(
+      bodyLarge: TextStyle(color: Colors.white),
+      bodyMedium: TextStyle(color: Colors.white70),
+      titleLarge: TextStyle(color: Colors.white),
+    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primary,

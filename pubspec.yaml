@@ -1,4 +1,4 @@
-name: movie_app
+name: spotify_clone
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -38,6 +38,7 @@ dependencies:
   flutter_bloc: ^9.1.1
   hydrated_bloc: ^10.0.0
   path_provider:
+  rename_app: ^1.6.5
 
 dev_dependencies:
   flutter_test:
