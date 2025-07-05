@@ -3,6 +3,7 @@ import 'package:movie_app/common/widgets/buttons/basic_button.dart';
 import 'package:movie_app/core/configs/assets/app.images.dart';
 import 'package:movie_app/core/configs/assets/app.vectors.dart';
 import 'package:movie_app/core/configs/theme/app.colors.dart';
+import 'package:movie_app/presentation/choose_mode/pages/choose_mode.dart';
 
 class GetStartedPage extends StatelessWidget {
   const GetStartedPage({super.key});
@@ -50,7 +51,17 @@ class GetStartedPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 21),
-                  BasicAppButton(onPressed: () {}, title: 'Get Started'),
+                  BasicAppButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => ChooseMode(),
+                        ),
+                      );
+                    },
+                    title: 'Get Started',
+                  ),
                 ],
               ),
             ),
