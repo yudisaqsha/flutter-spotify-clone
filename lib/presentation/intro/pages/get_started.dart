@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/common/widgets/buttons/basic_button.dart';
-import 'package:movie_app/core/configs/assets/app.images.dart';
-import 'package:movie_app/core/configs/assets/app.vectors.dart';
-import 'package:movie_app/core/configs/theme/app.colors.dart';
-import 'package:movie_app/presentation/choose_mode/pages/choose_mode.dart';
+import 'package:spotify_clone/common/widgets/buttons/basic_button.dart';
+import 'package:spotify_clone/core/configs/assets/app.images.dart';
+import 'package:spotify_clone/core/configs/assets/app.vectors.dart';
+import 'package:spotify_clone/core/configs/theme/app.colors.dart';
+import 'package:spotify_clone/presentation/choose_mode/pages/choose_mode.dart';
 
 class GetStartedPage extends StatelessWidget {
   const GetStartedPage({super.key});
