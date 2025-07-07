@@ -7,6 +7,19 @@ class AppTheme {
     scaffoldBackgroundColor: AppColors.lightbackground,
     brightness: Brightness.light,
     fontFamily: 'Satoshi',
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: Colors.transparent,
+      contentPadding: EdgeInsets.all(20),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(20),
+        borderSide: BorderSide(color: Colors.black, width: 0.4),
+      ),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(20),
+        borderSide: BorderSide(color: Colors.black, width: 0.4),
+      ),
+    ),
     textTheme: const TextTheme(
       bodyLarge: TextStyle(color: Colors.black), // warna text utama
       bodyMedium: TextStyle(color: Colors.black87),
@@ -27,9 +40,22 @@ class AppTheme {
     scaffoldBackgroundColor: AppColors.background,
     fontFamily: 'Satoshi',
     brightness: Brightness.dark,
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: Colors.transparent,
+      contentPadding: EdgeInsets.all(20),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(20),
+        borderSide: BorderSide(color: Colors.white, width: 0.4),
+      ),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(20),
+        borderSide: BorderSide(color: Colors.white, width: 0.4),
+      ),
+    ),
     textTheme: const TextTheme(
       bodyLarge: TextStyle(color: Colors.white),
-      bodyMedium: TextStyle(color: Colors.white70),
+      bodyMedium: TextStyle(color: Colors.white),
       titleLarge: TextStyle(color: Colors.white),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(

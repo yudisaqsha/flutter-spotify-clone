@@ -4,6 +4,8 @@ import 'package:spotify_clone/common/appbar/app_bar.dart';
 import 'package:spotify_clone/common/helpers/is_dark.dart';
 import 'package:spotify_clone/common/widgets/buttons/basic_button.dart';
 import 'package:spotify_clone/core/configs/assets/app.vectors.dart';
+import 'package:spotify_clone/presentation/auth/pages/register.dart';
+import 'package:spotify_clone/presentation/auth/pages/signin.dart';
 
 class SigninRegister extends StatelessWidget {
   const SigninRegister({super.key});
@@ -45,7 +47,15 @@ class SigninRegister extends StatelessWidget {
                     children: [
                       Expanded(
                         child: BasicAppButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder:
+                                    (BuildContext context) => RegisterPage(),
+                              ),
+                            );
+                          },
                           title: 'Register',
                         ),
                       ),
@@ -53,7 +63,14 @@ class SigninRegister extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => SignInPage(),
+                              ),
+                            );
+                          },
                           style: TextButton.styleFrom(
                             minimumSize: Size(double.infinity, 80),
                           ),
