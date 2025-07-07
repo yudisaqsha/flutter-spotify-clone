@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spotify_clone/common/appbar/app_bar.dart';
 import 'package:spotify_clone/common/helpers/is_dark.dart';
 import 'package:spotify_clone/common/widgets/buttons/basic_button.dart';
 import 'package:spotify_clone/core/configs/assets/app.vectors.dart';
@@ -12,6 +13,7 @@ class SigninRegister extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+          BasicAppBar(),
           Align(
             alignment: Alignment.topRight,
             child: SvgPicture.asset(AppVectors.topPattern),
@@ -58,6 +60,7 @@ class SigninRegister extends StatelessWidget {
                           child: Text(
                             'Sign In',
                             style: TextStyle(
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color:
                                   context.isDarkMode
