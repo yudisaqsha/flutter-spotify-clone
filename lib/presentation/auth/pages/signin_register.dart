@@ -64,7 +64,7 @@ class SigninRegister extends StatelessWidget {
                         flex: 1,
                         child: TextButton(
                           onPressed: () {
-                            Navigator.push(
+                            Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                 builder: (BuildContext context) => SignInPage(),
@@ -95,7 +95,9 @@ class SigninRegister extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.bottomRight,
-            child: SvgPicture.asset(AppVectors.bottomPattern),
+            child: IgnorePointer(
+              child: SvgPicture.asset(AppVectors.bottomPattern),
+            ),
           ),
         ],
       ),
