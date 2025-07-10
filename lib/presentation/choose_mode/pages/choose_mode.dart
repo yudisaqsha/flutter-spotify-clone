@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:spotify_clone/common/widgets/buttons/basic_button.dart';
-import 'package:spotify_clone/core/configs/assets/app.images.dart';
-import 'package:spotify_clone/core/configs/assets/app.vectors.dart';
+import 'package:spotify_app/common/widgets/buttons/basic_button.dart';
+import 'package:spotify_app/core/configs/assets/app.images.dart';
+import 'package:spotify_app/core/configs/assets/app.vectors.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:spotify_clone/core/configs/theme/app.colors.dart';
-import 'package:spotify_clone/presentation/auth/pages/signin_register.dart';
-import 'package:spotify_clone/presentation/choose_mode/bloc/theme_cubit.dart';
+import 'package:spotify_app/core/configs/theme/app.colors.dart';
+import 'package:spotify_app/presentation/auth/pages/signin_register.dart';
+import 'package:spotify_app/presentation/choose_mode/bloc/theme_cubit.dart';
 
 class ChooseMode extends StatelessWidget {
   const ChooseMode({super.key});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:spotify_clone/common/appbar/app_bar.dart';
-import 'package:spotify_clone/common/widgets/buttons/basic_button.dart';
-import 'package:spotify_clone/core/configs/assets/app.vectors.dart';
-import 'package:spotify_clone/presentation/auth/pages/register.dart';
+import 'package:spotify_app/common/appbar/app_bar.dart';
+import 'package:spotify_app/common/widgets/buttons/basic_button.dart';
+import 'package:spotify_app/core/configs/assets/app.vectors.dart';
+import 'package:spotify_app/presentation/auth/pages/register.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
