@@ -2,10 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:spotify_app/common/appbar/app_bar.dart';
 import 'package:spotify_app/common/widgets/buttons/basic_button.dart';
 import 'package:spotify_app/core/configs/assets/app.vectors.dart';
+import 'package:spotify_app/data/models/auth/create_user_req.dart';
+import 'package:spotify_app/domain/usecases/auth/signup.dart';
 import 'package:spotify_app/presentation/auth/pages/signin.dart';
+import 'package:spotify_app/presentation/root/pages/root.dart';
+import 'package:spotify_app/service_locator.dart';
 
 class RegisterPage extends StatelessWidget {
-  const RegisterPage({super.key});
+  RegisterPage({super.key});
+  final TextEditingController _fullName = TextEditingController();
+  final TextEditingController _email = TextEditingController();
+  final TextEditingController _password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -14,21 +21,49 @@ class RegisterPage extends StatelessWidget {
         title: Image.asset(AppVectors.spotifyLogo, height: 100, width: 100),
       ),
       bottomNavigationBar: _signInRoute(context),
-      body: Padding(
-        padding: EdgeInsets.symmetric(vertical: 40, horizontal: 40),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            _registerPage(),
-            SizedBox(height: 30),
-            _fullNameField(context),
-            SizedBox(height: 15),
-            _emailField(context),
-            SizedBox(height: 15),
-            _passwordField(context),
-            SizedBox(height: 20),
-            BasicAppButton(onPressed: () {}, title: 'Create Account'),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 40, horizontal: 40),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              _registerPage(),
+              SizedBox(height: 30),
+              _fullNameField(context),
+              SizedBox(height: 15),
+              _emailField(context),
+              SizedBox(height: 15),
+              _passwordField(context),
+              SizedBox(height: 20),
+              BasicAppButton(
+                onPressed: () async {
+                  var result = await sl<SignUpUseCase>().call(
+                    params: CreateUserReq(
+                      email: _email.text.toString(),
+                      fullName: _fullName.text.toString(),
+                      password: _password.text.toString(),
+                    ),
+                  );
+                  result.fold(
+                    (l) {
+                      var snackbar = SnackBar(content: Text(l));
+                      ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                    },
+                    (r) {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => RootPage(),
+                        ),
+                        (route) => false,
+                      );
+                    },
+                  );
+                },
+                title: 'Create Account',
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -43,6 +78,7 @@ class RegisterPage extends StatelessWidget {
 
   Widget _fullNameField(context) {
     return TextField(
+      controller: _fullName,
       decoration: InputDecoration(
         hintText: 'Full Name',
       ).applyDefaults(Theme.of(context).inputDecorationTheme),
@@ -51,6 +87,7 @@ class RegisterPage extends StatelessWidget {
 
   Widget _emailField(context) {
     return TextField(
+      controller: _email,
       decoration: InputDecoration(
         hintText: 'Enter Email',
       ).applyDefaults(Theme.of(context).inputDecorationTheme),
@@ -59,6 +96,8 @@ class RegisterPage extends StatelessWidget {
 
   Widget _passwordField(context) {
     return TextField(
+      controller: _password,
+      obscureText: true,
       decoration: InputDecoration(
         hintText: 'Enter Password',
       ).applyDefaults(Theme.of(context).inputDecorationTheme),
